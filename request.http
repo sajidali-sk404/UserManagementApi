@@ -1,0 +1,67 @@
+### 🔐 Sign up a new user
+POST http://localhost:5000/signup
+Content-Type: application/json
+
+{
+  "username": "sajid123",
+  "password": "securePass!",
+  "name": "SaJiD",
+  "email": "sajid@example.com"
+}
+
+###
+
+### 🔑 Login to get JWT token
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "sajid123",
+  "password": "securePass!"
+}
+
+###
+
+### 🧪 Get all users (requires token)
+GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2FqaWQxMjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNzU4MzA4NDI4LCJpc3MiOiJ5b3VyLWFwcCIsImF1ZCI6InlvdXItYXBwIn0.aytWZDTHiAnKBmclDIDznWpJpqOG4trFaTpiMKBSog0
+Accept: application/json
+
+###
+
+### 🔍 Get user by ID
+GET http://localhost:5000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2FqaWQxMjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNzU4MzA4NDI4LCJpc3MiOiJ5b3VyLWFwcCIsImF1ZCI6InlvdXItYXBwIn0.aytWZDTHiAnKBmclDIDznWpJpqOG4trFaTpiMKBSog0
+Accept: application/json
+
+###
+
+### ➕ Add a new user
+POST http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2FqaWQxMjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNzU4MzA4NDI4LCJpc3MiOiJ5b3VyLWFwcCIsImF1ZCI6InlvdXItYXBwIn0.aytWZDTHiAnKBmclDIDznWpJpqOG4trFaTpiMKBSog0
+Content-Type: application/json
+
+{
+  "name": "Charlie",
+  "email": "charlie@example.com"
+}
+
+###
+
+### ✏️ Update user
+PUT http://localhost:5000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2FqaWQxMjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNzU4MzA4NDI4LCJpc3MiOiJ5b3VyLWFwcCIsImF1ZCI6InlvdXItYXBwIn0.aytWZDTHiAnKBmclDIDznWpJpqOG4trFaTpiMKBSog0
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "SaJiD Updated",
+  "email": "sajid.updated@example.com"
+}
+
+###
+
+### ❌ Delete user
+DELETE http://localhost:5000/users/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2FqaWQxMjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNzU4MzA4NDI4LCJpc3MiOiJ5b3VyLWFwcCIsImF1ZCI6InlvdXItYXBwIn0.aytWZDTHiAnKBmclDIDznWpJpqOG4trFaTpiMKBSog0
+Accept: application/json
